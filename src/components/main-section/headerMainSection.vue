@@ -11,26 +11,16 @@ import {
 const route = useRoute();
 
 const navData = [
-  {
-    name: "About Me",
-    href: "/about-me",
-  },
-  {
-    name: "Portfolio",
-    href: "/portfolio",
-  },
-  {
-    name: "Certified",
-    href: "/certified",
-  },
-  {
-    name: "Contact",
-    href: "/contact",
-  },
+  { name: "About Me", href: "#/about-me" },
+  { name: "Portfolio", href: "#/portfolio" },
+  { name: "Certified", href: "#/certified" },
+  { name: "Contact", href: "#/contact" },
 ];
 
 const getTitle = () => {
-  const currentRoute = navData.find((item) => item.href === route.path);
+  const currentRoute = navData.find(
+    (item) => item.href.replace("#", "") === route.path
+  );
   return currentRoute ? currentRoute.name : "About Me";
 };
 </script>
@@ -45,22 +35,20 @@ const getTitle = () => {
     <NavigationMenu class="border-2 border-slate-200 rounded p-1">
       <NavigationMenuList>
         <NavigationMenuItem v-for="item in navData" :key="item.name">
-          <NavigationMenuLink
-            class="text-base font-semibold"
-            :href="item.href"
-            :class="[
-              navigationMenuTriggerStyle(),
-              { 'bg-slate-200': item.href === route.path },
-            ]"
-          >
-            {{ item.name }}
-          </NavigationMenuLink>
+          <router-link :to="item.href">
+            <NavigationMenuLink
+              :class="[
+                navigationMenuTriggerStyle(),
+                { 'bg-slate-200': item.href.replace('#', '') === route.path },
+              ]"
+            >
+              {{ item.name }}
+            </NavigationMenuLink>
+          </router-link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
