@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import AboutmeSection from '@/components/main-section/content-section/AboutmeSection/index.AboutmeSection.vue';
 import PortfolioSection from '@/components/main-section/content-section/PortfolioSection/index.PortfolioSection.vue';
 import CertifiedSection from '@/components/main-section/content-section/CertifiedSection/index.CertifiedSection.vue';
@@ -13,7 +13,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 });
 
