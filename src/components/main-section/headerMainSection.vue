@@ -33,7 +33,7 @@ const getTitle = () => {
     <NavigationMenu class="border-2 border-slate-200 rounded p-1">
       <NavigationMenuList>
         <NavigationMenuItem v-for="item in navData" :key="item.name">
-          <router-link :to="item.path">
+          <router-link :to="item.path" class="block">
             <NavigationMenuLink
               :class="[
                 navigationMenuTriggerStyle(),
