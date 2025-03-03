@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
-  base: '/',
+  base: '/portfolio/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
