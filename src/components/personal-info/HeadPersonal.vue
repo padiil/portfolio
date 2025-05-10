@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import profileImage from "@/assets/profile/FotoProfile1.png";
 import { defineProps, defineEmits } from "vue";
 
-const props = defineProps({
+defineProps({
   isOpen: Boolean,
 });
 
