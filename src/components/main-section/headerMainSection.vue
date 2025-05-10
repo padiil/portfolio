@@ -30,7 +30,7 @@ const getTitle = () => {
       <hr class="border-2 border-slate-200" />
     </div>
 
-    <NavigationMenu class="border-2 border-slate-200 rounded p-1">
+    <NavigationMenu class="border-2 border-slate-200 rounded p-1 hidden md:flex">
       <NavigationMenuList>
         <NavigationMenuItem v-for="item in navData" :key="item.name">
           <router-link :to="item.path" class="block">
